@@ -166,3 +166,37 @@ def astar_solve(game):
 
     # (Search loop will be added next)
     return None
+    # ---------- 5. A* search ----------
+    start_state = game.get_initial_state()
+    if game.is_goal(start_state):
+        return []
+
+    frontier = []
+    counter = 0
+    heapq.heappush(frontier, (heuristic(start_state), 0, counter, start_state, []))
+    best_g = {start_state: 0}
+    visited = set()
+
+    while frontier:
+        f, g, _, state, actions = heapq.heappop(frontier)
+        if state in visited:
+            continue
+        if best_g.get(state, INF) < g:
+            continue
+        if game.is_goal(state):
+            return actions
+
+        visited.add(state)
+
+        for action, next_state, step_cost in game.get_successors(state):
+            # Prune only corner deadlocks (safe and effective)
+            if any(box in dead_cells for box in next_state.get_boxes()):
+                continue
+            new_g = g + step_cost
+            if new_g < best_g.get(next_state, INF):
+                best_g[next_state] = new_g
+                new_h = heuristic(next_state)
+                new_f = new_g + new_h
+                counter += 1
+                heapq.heappush(frontier, (new_f, new_g, counter, next_state, actions + [action]))
+    return None

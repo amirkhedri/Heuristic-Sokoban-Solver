@@ -61,7 +61,7 @@ By developing this solver, the following core AI concepts were achieved:
 ```
 
 2. Install the required dependencies:
-```bash
+
 pip install pygame
 
 ```
@@ -75,8 +75,6 @@ python main.py
 
 
 
-*(Note: Replace `main.py` with your actual execution script if it differs).*
-
 ---
 
 ## 🎓 Academic Context
@@ -85,10 +83,8 @@ This project was developed for the **Fundamentals and Applications of Artificial
 
 * **University:** Faculty of Computer Engineering, University of Isfahan
 * **Semester:** Spring 2026 (1404-1405)
-* **Instructor:** Dr. Marzieh Hosseini
-* **Teaching Assistants:** Marzieh Karami, Masih Roughani, Fatemeh Sayadzade
+
 * **Author:** Amirmohammad Khedri
 
 ```
 
-```

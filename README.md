@@ -86,5 +86,4 @@ This project was developed for the **Fundamentals and Applications of Artificial
 
 * **Author:** Amirmohammad Khedri
 
-```
 
